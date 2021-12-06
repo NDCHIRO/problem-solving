@@ -1,21 +1,23 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map <int,int> umap;
         vector<int> res(2);
-        int rem;
-        for(int i=0;i<nums.size() ; i++)
+        int j=nums.size()-1;
+        for(int i=0;i<nums.size();)
         {
-            rem=target - nums[i];
-            if(umap.find(rem) != umap.end())
+            if(nums[i]+nums[j] == target)
             {
-                res[0]=umap.at(rem)+1;
-                res[1]=i+1;
+                res[0]=i+1;
+                res[1]=j+1;
+                //cout<<res[0]<<res[1]<<endl;
                 return res;
             }
-            umap.insert({nums[i],i});
-            
+            else if(nums[i]+nums[j] > target)
+                j--;
+            else
+                i++;
         }
+        
         return res;
     }
 };
