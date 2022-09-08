@@ -17,13 +17,13 @@ class Solution {
         ListNode slow=fast;
         while(fast!=null)
         {
-            while(fast.val!=0)
+            if(fast.val!=0)
             {
                 sum+=fast.val;
                 fast=fast.next;
             }
             
-            if(fast.val==0)
+            else
             {
                 slow.val = sum;
                 slow.next=fast.next;              
