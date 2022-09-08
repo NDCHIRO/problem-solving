@@ -28,8 +28,7 @@ class Solution {
                 slow.val = sum;
                 slow.next=fast.next;              
                 fast = fast.next;
-                if(fast!=null)
-                    slow=fast;
+                slow=fast;
                 sum=0;
             }
         }
