@@ -3,12 +3,10 @@ public:
     int subtractProductAndSum(int n) {
         int sum=0;
         int multiply=1;
-        int digit=0;
         while(n>0)
         {
-            digit=n%10;
-            sum+=digit;
-            multiply*=digit;
+            sum+=n%10;
+            multiply*=n%10;
             n=n/10;
         }
         return multiply-sum;
