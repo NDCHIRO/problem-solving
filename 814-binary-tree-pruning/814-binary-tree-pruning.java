@@ -24,6 +24,7 @@ class Solution {
         if ( root.val == 0 && root.left == null && root.right == null )
             return null;
         
+        
         return root;
     }
 }
