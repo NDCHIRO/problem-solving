@@ -1,6 +1,18 @@
 class Solution {
     public int reverse(int x) {
-        int rev = 0;
+        int result=0;
+        int newResult=0;
+        while(x!=0)
+        {
+            newResult=newResult*10+(x%10);
+            x/=10;
+            //System.out.println(newResult/10);
+            if((newResult/10)!=result)
+                return 0;
+            result=newResult;
+        }
+        return result;
+        /*int rev = 0;
         int pop;
         while(x!=0)
         {
@@ -12,6 +24,6 @@ class Solution {
                 return 0;
             rev = rev*10 + pop;
         }
-        return rev;
+        return rev;*/
     }
 }
