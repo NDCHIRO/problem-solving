@@ -17,7 +17,6 @@ class Solution {
             size++;
             cur=cur.next;
         }
-        System.out.println(size);
         cur=head;
         int res=0;
         while(cur!=null)
