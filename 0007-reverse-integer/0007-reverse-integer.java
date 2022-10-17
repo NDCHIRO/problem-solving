@@ -1,8 +1,5 @@
 class Solution {
     public int reverse(int x) {
-        boolean negative=false;
-        if(x==0)
-            return 0;
         int rev = 0;
         int pop;
         while(x!=0)
