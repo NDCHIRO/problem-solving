@@ -16,16 +16,16 @@
 class Solution {
     int sum=0;
     public int rangeSumBST(TreeNode root, int low, int high) {
-           printTree(root,low,high);
+           scanTree(root,low,high);
         return  sum;
     }
-    public void printTree(TreeNode root,int low,int high)
+    public void scanTree(TreeNode root,int low,int high)
     {
         if(root==null)
             return;
-        printTree(root.left,low,high);
+        scanTree(root.left,low,high);
         if(root.val<=high && root.val>=low)
             sum+=root.val;
-        printTree(root.right,low,high);
+        scanTree(root.right,low,high);
     }
 }
