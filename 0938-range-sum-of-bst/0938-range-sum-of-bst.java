@@ -23,9 +23,9 @@ class Solution {
     {
         if(root==null)
             return;
-        scanTree(root.left,low,high);
         if(root.val<=high && root.val>=low)
             sum+=root.val;
+        scanTree(root.left,low,high);
         scanTree(root.right,low,high);
     }
 }
