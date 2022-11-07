@@ -11,14 +11,14 @@ class Solution {
             //if ) or ] or }  pop 
             else 
             {   
-                if(checkSize())
+                if(checkEmptySize())
                     return false;
                 valid = pop(s.charAt(i)+"",brackets.get(brackets.size()-1));
                 if(valid ==false)
                     return false;
             }
         }
-        return valid&&(checkSize());
+        return valid && checkEmptySize();
     }
     
     boolean pop(String bracket, String top)
@@ -35,7 +35,7 @@ class Solution {
         return valid;
     }
               
-    boolean checkSize()
+    boolean checkEmptySize()
     {
         if(brackets.size() == 0)
             return true;
