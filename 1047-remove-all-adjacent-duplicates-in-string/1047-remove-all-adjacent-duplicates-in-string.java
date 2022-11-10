@@ -1,6 +1,5 @@
 class Solution {
     public String removeDuplicates(String s) {
-        
         StringBuilder str = new StringBuilder();
         char[] characters = s.toCharArray();
         for(int i=0;i<s.length();i++)
