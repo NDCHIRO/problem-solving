@@ -7,16 +7,16 @@ class Solution {
         {
             if(s.charAt(i)=='#')
             {
-                num=Integer.parseInt(s.charAt(i-2)+""+s.charAt(i-1)+"");
-                System.out.println(num-1);
-               c =  (char)((num-1)+'a');
+                num=Integer.parseInt(s.charAt(i-2)+""+s.charAt(i-1))-1;
+                System.out.println(num);
+               c =  (char)((num)+'a');
                 System.out.println(c);
                 i-=3;
             }
             else
             {
-                num = Integer.parseInt(s.charAt(i)+"")+98;
-                c = (char)((num%9) + 'a');
+                num = Integer.parseInt(s.charAt(i)+"")-1;
+                c = (char)((num) + 'a');
                 i--;
             }
             str.append(c);
