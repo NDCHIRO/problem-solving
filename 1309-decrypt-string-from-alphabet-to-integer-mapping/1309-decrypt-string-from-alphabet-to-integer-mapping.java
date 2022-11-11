@@ -16,9 +16,7 @@ class Solution {
             else
             {
                 num = Integer.parseInt(s.charAt(i)+"")+98;
-                //System.out.println(num%9);
                 c = (char)((num%9) + 'a');
-                //System.out.println(c);
                 i--;
             }
             str.append(c);
