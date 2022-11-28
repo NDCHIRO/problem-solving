@@ -8,8 +8,6 @@ class Solution {
             { 
                 c = shift(s.charAt(i),s.charAt(i+1));
                 out+=s.charAt(i)+""+c;
-                System.out.println(out);
-
             }
         }
         if(s.length()%2!=0)
@@ -20,7 +18,6 @@ class Solution {
     public char shift(char c1,char c2)
     {
         char c = (char)(c1 + (c2 - '0'));
-        System.out.println(c);
         return c;
     }
 }
