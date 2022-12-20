@@ -12,14 +12,11 @@ class MyStack {
         q2.add(x);
         for(int i=0;i<size;i++)
         {
-            q2.add(q.element());
-            q.remove();
+            q2.add(q.remove());
          }
-        q.clear();
         for(int i=0;i<size+1;i++)
         {
-            q.add(q2.element());
-            q2.remove();
+            q.add(q2.remove());
          }
 
     }
@@ -29,9 +26,7 @@ class MyStack {
     }
     
     public int top() {
-        System.out.println(q.peek());
-        return q.element();
-        //return null;
+        return q.peek();
     }
     
     public boolean empty() {
