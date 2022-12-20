@@ -7,7 +7,8 @@ class MyStack {
     }
     
     public void push(int x) {
-        int size = q.size();
+        //using 2 queues
+        /*int size = q.size();
         q2.clear();
         q2.add(x);
         for(int i=0;i<size;i++)
@@ -17,7 +18,13 @@ class MyStack {
         for(int i=0;i<size+1;i++)
         {
             q.add(q2.remove());
-         }
+         }*/
+        
+        //using one queue
+        q.add(x);
+        int size = q.size();
+        for(int i=0;i<size-1;i++)
+            q.add(q.remove());
 
     }
     
