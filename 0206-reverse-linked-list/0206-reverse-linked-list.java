@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-       /*ListNode current = head;
+       ListNode current = head;
         ListNode prev = null;
         ListNode next = head;
         while(current!=null)
@@ -22,16 +22,17 @@ class Solution {
         }
         head = prev;
         return head;
-        ListNode prev = null;*/
+        /*recursive solution
         return reverse(head,null);
+        */
     }
-    
-    ListNode reverse(ListNode current,ListNode prev)
+    /*recursive solution*/
+    /*ListNode reverse(ListNode current,ListNode prev)
     {
         if(current == null)
             return prev;
         ListNode next = current.next;
         current.next = prev;
         return reverse(next,current);
-    }
+    }*/
 }
