@@ -29,6 +29,7 @@ class Solution {
         size=size/2;
         while(size>0)
         {
+            //you reached the node before the node you want to delete
             if(count == size-1)
             {
                 current.next=current.next.next;
