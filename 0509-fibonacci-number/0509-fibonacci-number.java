@@ -11,7 +11,6 @@ int arr[] = new int[31];
         return arr[n];
     }   
 }
-
 /*
 //recursive solution
 public int fib(int n) {
