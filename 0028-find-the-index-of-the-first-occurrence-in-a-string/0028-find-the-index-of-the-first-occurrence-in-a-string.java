@@ -5,7 +5,6 @@ class Solution {
                 if(i+j<haystack.length() && haystack.charAt(i+j)==needle.charAt(j))
                 {
                     if(j==needle.length()-1)
-                        //System.out.println(needle.length()-1);
                         return i;
                 }
                 else
