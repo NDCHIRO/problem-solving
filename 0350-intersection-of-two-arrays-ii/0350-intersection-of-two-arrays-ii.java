@@ -7,7 +7,7 @@ class Solution {
             freqNum1[nums1[i]]++;
         for(int i=0;i<nums2.length;i++)
             freqNum2[nums2[i]]++;
-        int count=0;
+        
         ArrayList<Integer> list = new ArrayList<Integer>();
         for(int i=0;i<1001;i++)
         {
@@ -17,7 +17,7 @@ class Solution {
                         list.add(i);
             }
         }
-        System.out.println(list);
+        
         int[] result = new int[list.size()];
         for(int i=0;i<list.size();i++)
             result[i]=list.get(i);
