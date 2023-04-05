@@ -6,8 +6,6 @@ class Solution {
         while(r>=l)
         {
             mid = (l+r)/2;
-            /*if(l >= r && nums[mid] != target)
-                return -1;*/
             if(nums[mid] == target)
                 return mid;
             else if(nums[mid] > target)
