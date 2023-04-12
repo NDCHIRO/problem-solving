@@ -1,6 +1,19 @@
 class Solution {
     public int missingNumber(int[] nums) {
         int i=0;
+        int sum=nums.length;
+        for(;i<nums.length;i++)
+        {
+            sum+=i-nums[i];
+        }
+        return sum;
+    }
+}
+
+/*
+class Solution {
+    public int missingNumber(int[] nums) {
+        int i=0;
         int xor = 0;
         for(i=0;i<nums.length;i++)
         {
@@ -9,6 +22,8 @@ class Solution {
         return xor ^ i;
     }
 }
+
+*/
 
 /*
 class Solution {
