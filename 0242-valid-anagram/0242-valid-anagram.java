@@ -1,15 +1,9 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        s = sort(s);
-        t = sort(t);
-        if(s.equals(t))
-            return true;
-        return false;
-    }
-    public String sort(String s)
-    {
-        char[] c = s.toCharArray();
-        Arrays.sort(c);
-        return new String(c);
+        int[] alphabet = new int[26];
+        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a']++;
+        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a']--;
+        for (int i : alphabet) if (i != 0) return false;
+        return true;
     }
 }
