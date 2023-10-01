@@ -6,14 +6,12 @@ class Solution {
         {
             if(s.charAt(i)==' ')
             {
-                temp+=s.charAt(i);
-                s1+=reverseChars(temp);
+                //temp+=s.charAt(i);
+                s1+=reverseChars(temp)+' ';
                 temp="";
             }
             else
-            {
                 temp+=s.charAt(i);
-            }
         }
         s1+=reverseChars(temp);
         return s1;
@@ -24,11 +22,11 @@ class Solution {
         String res="";
         for(int i=0;i<chunkOfString.length();i++)
         {
-            if(chunkOfString.charAt(i)==' ')
+            /*if(chunkOfString.charAt(i)==' ')
             {
                 res+=' ';
                 return res;
-            }
+            }*/
             res=chunkOfString.charAt(i)+res;
         }
         return res;
