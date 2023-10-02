@@ -14,12 +14,11 @@ class Solution {
         }
         
         for(int i=1;i<sb.length()-1;i++){
-            while(i<sb.length()-1 && sb.charAt(i)==sb.charAt(i+1) && sb.charAt(i)==sb.charAt(i-1)
+            if(sb.charAt(i)==sb.charAt(i+1) && sb.charAt(i)==sb.charAt(i-1)
               && sb.charAt(i)==((char)('A'+player))){
                 sb.deleteCharAt(i);
                 player = 1 ^ player;
                 done = 1;
-                //System.out.println(sb);
             }
         }
         
