@@ -8,27 +8,25 @@ class Solution {
     public boolean checkWinner(StringBuilder sb,int player)
     {
         int done=0;
-        if(sb.length()<3)
-        {
-            if(player==0) return false;
-            else return true;
+        if(sb.length()<3){
+            boolean res=(player==0)?  false:true;
+            return res;
         }
         
-        for(int i=1;i<sb.length()-1;i++)
-        {
+        for(int i=1;i<sb.length()-1;i++){
             while(i<sb.length()-1 && sb.charAt(i)==sb.charAt(i+1) && sb.charAt(i)==sb.charAt(i-1)
-              && sb.charAt(i)==((char)('A'+player)))
-            {
-                
+              && sb.charAt(i)==((char)('A'+player))){
                 sb.deleteCharAt(i);
                 player = 1 ^ player;
                 done = 1;
                 //System.out.println(sb);
             }
         }
-        if(done!=1)
-            if(player==0) return false;
-            else return true;
+        
+        if(done!=1){
+            boolean res=(player==0)?  false:true;
+            return res;
+        }
         return checkWinner(sb,player);
     }
 }
