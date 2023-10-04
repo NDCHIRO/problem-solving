@@ -12,42 +12,26 @@ class MyHashMap {
             nodes.add(node);
         }
         else
-        {
             for(int i=0;i<nodes.size();i++)
-            if(nodes.get(i).key==key)
-            {
-                
-                nodes.get(i).val=value;
-                System.out.println(nodes.get(i).key+" "+nodes.get(i).val);
-            }
-        }
-        //for(int i=0;i<nodes.size();i++)
-            //System.out.println(nodes.get(i).key+" "+nodes.get(i).val);
+                if(nodes.get(i).key==key)
+                    nodes.get(i).val=value;
     }
     
     public int get(int key) {
         int val = idx(key);
-        //System.out.println(nodes.get(i).key+" "+nodes.get(i).val);
         return val==-1? -1: val;
     }
     
     public void remove(int key) {
         for(int i=0;i<nodes.size();i++)
             if(nodes.get(i).key==key)
-            {
-                
                 nodes.remove(i);
-                //System.out.println(nodes.get(i).key+" "+nodes.get(i).val);
-            }
     }
     
     int idx(int key){
         for(int i=0;i<nodes.size();i++)
             if(nodes.get(i).key==key)
-            {
-                //System.out.println(nodes.get(i).key+" "+nodes.get(i).val);
                 return nodes.get(i).val;
-            }
         return -1;
     }
 }
@@ -56,7 +40,6 @@ class Node
 {
     int key;
     int val;
-    Node next;
     Node(int key,int val)
     {
         this.key=key;
