@@ -1,18 +1,16 @@
 class Solution {
     public boolean validateBinaryTreeNodes(int n, int[] leftChild, int[] rightChild) {
-        int root = findRoot(n, leftChild, rightChild);
-        if (root == -1) {
+        int root = findRoot(n,leftChild, rightChild);
+        if(root==-1)
             return false;
-        }
-        
-        Set<Integer> seen = new HashSet<>();
-        Stack<Integer> stack = new Stack<>();
-        seen.add(root);
+        Set<Integer> seen = new HashSet<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
         stack.push(root);
-        
-        while (!stack.isEmpty()) {
+        seen.add(root);
+        while(!stack.empty())
+        {
             int node = stack.pop();
-            int[] children = {leftChild[node], rightChild[node]};
+         int[] children = {leftChild[node], rightChild[node]};
             
             for (int child : children) {
                 if (child != -1) {
@@ -30,22 +28,20 @@ class Solution {
         return seen.size() == n;
     }
     
-    public int findRoot(int n, int[] left, int[] right) {
-        Set<Integer> children = new HashSet<>();
-        for (int node : left) {
-            children.add(node);
-        }
+    int findRoot(int n, int[] leftChild, int[] rightChild)
+    {
+        Set<Integer> childern = new HashSet<>();
+        for(int node:leftChild)
+            childern.add(node);
         
-        for (int node : right) {
-            children.add(node);
-        }
+        for(int node:rightChild)
+            childern.add(node);
         
-        for (int i = 0; i < n; i++) {
-            if (!children.contains(i)) {
+        for(int i=0;i<n;i++)
+        {
+            if(!childern.contains(i))
                 return i;
-            }
         }
-        
         return -1;
     }
 }
