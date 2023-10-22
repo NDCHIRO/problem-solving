@@ -18,7 +18,6 @@ class Solution {
                 r+=1;
                 minElement = Math.min(nums[r],minElement);
             }
-            System.out.println(minElement);
             maxPorduct = Math.max(maxPorduct,minElement*(r-l+1));
         }
         return maxPorduct;
