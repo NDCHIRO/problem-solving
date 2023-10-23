@@ -4,9 +4,9 @@ class Solution {
             return true;
         if(n<=0)
             return false;
-        
-        if((Math.log(n)/ Math.log(4))  == (Math.ceil((Math.log(n))/ Math.log(4))))
+        return (Math.log10(n) / Math.log10(4)) % 1 == 0;
+        /*if((Math.log(n)/ Math.log(4))  == (Math.ceil((Math.log(n))/ Math.log(4))))
             return true;
-        return false;
+        return false;*/
     }
 }
