@@ -1,32 +1,17 @@
 class Solution {
     public String mergeAlternately(String word1, String word2) {
-        int s1Len = word1.length();
-        int s2Len = word2.length();
-        int minLen = s1Len<=s2Len? s1Len: s2Len;
+        int n = word1.length();
+        int m = word2.length();
+        int minLen = n<=m? n: m;
         String merge = "";
         int i=0,j=0;
-        while(i<s1Len || j<s2Len)
+        while(i<n || j<m)
         {
-            if(i<s1Len)
+            if(i<n)
                 merge+=word1.charAt(i++);
-            if(j<s2Len)
+            if(j<m)
                 merge+=word2.charAt(j++);
         }
         return merge;
     }
-        /*for(int i=0;i<minLen;i++)
-        {
-            merge+=word1.charAt(i);
-            merge+=word2.charAt(i);
-        }
-        if(s1Len==s2Len)
-            return merge;
-        else if(s1Len>s2Len)
-            for(int i=minLen;i<s1Len;i++)
-                merge+=word1.charAt(i);
-        else
-            for(int i=minLen;i<s2Len;i++)
-                merge+=word2.charAt(i);
-        return merge;
-    }*/
 }
