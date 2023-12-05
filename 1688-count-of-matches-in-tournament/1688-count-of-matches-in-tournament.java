@@ -1,5 +1,5 @@
 class Solution {
-    int noOfMatches=0;
+    //int noOfMatches=0;
     public int numberOfMatches(int n) {
         return n-1;
         /*if(n==1)
