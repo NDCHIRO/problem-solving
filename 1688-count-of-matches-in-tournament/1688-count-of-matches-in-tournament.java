@@ -5,13 +5,9 @@ class Solution {
             return noOfMatches;
          
         if(n%2==0)
-        {
             return (noOfMatches+n/2)+numberOfMatches(n/2);
-        }
         else        
-        {
             return (1+(noOfMatches+n/2))+numberOfMatches(n/2);
-        }
     }
     
 }
