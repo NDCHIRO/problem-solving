@@ -11,12 +11,13 @@ class Solution {
         }
         String res = "";
         if(saveIndex!=-1)
-        {
+            res = num.substring(0, saveIndex+1);
+        /*{
             for(int i=0;i<=saveIndex;i++)
             {
                 res+=num.charAt(i);
             }
-        }
+        }*/
         return res;
     }
 }
