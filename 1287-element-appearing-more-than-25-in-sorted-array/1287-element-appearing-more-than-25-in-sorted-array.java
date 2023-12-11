@@ -12,16 +12,13 @@ class Solution {
                 map.put(arr[i],map.get(arr[i])+1);
             }
         }
-        int max=-1;
-        int index=-1;
-         for (Map.Entry<Integer,Integer> item : map.entrySet())  
-         {
-             if(max<item.getValue())
-                 index = item.getKey();
-             max = Math.max(item.getValue(),max);
-             
-         }
-        return index;
+        int target = arr.length / 4;
+         for (int key : map.keySet()) {
+            if (map.get(key) > target) {
+                return key;
+            }
+        }
+        return -1;
         /*int length = arr.length;
         int[] freq = new int[100001];
         for(int i=0;i<arr.length;i++)
