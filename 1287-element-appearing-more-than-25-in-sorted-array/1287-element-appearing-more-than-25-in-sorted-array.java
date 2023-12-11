@@ -6,7 +6,7 @@ class Solution {
         {
             freq[arr[i]]++;
         }
-        int max=-1000;
+        int max=-1;
         int index=-1;
         for(int i=0;i<100001;i++)
         {
