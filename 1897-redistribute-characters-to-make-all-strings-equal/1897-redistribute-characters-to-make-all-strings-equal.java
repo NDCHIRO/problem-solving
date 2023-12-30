@@ -1,7 +1,5 @@
 class Solution {
     public boolean makeEqual(String[] words) {
-        if(words.length==1)
-            return true;
         HashMap<Character,Integer> map = new HashMap<>();
         for(int i=0;i<words.length;i++)
         {
