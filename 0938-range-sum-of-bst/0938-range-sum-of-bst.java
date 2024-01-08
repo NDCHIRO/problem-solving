@@ -25,15 +25,4 @@ class Solution {
         
         return sum;
     }
-//     int range(TreeNode root, int low ,int high)
-//     {
-//         if(root == null)
-//             return 0;
-//         if(root.val >=low && root.val <= high)
-//             sum+=root.val;
-//         range(root.left,low,high);
-//         range(root.right,low,high);
-        
-//         return sum;
-//     }
 }
