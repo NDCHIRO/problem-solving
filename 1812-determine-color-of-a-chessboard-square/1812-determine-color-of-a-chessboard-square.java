@@ -7,10 +7,9 @@ class Solution {
         else 
             flag = 0;
         
-        if((flag==1 && (Integer.parseInt(coordinates.charAt(1)+"") % 2) != 0)
+        if( (flag==1 && (Integer.parseInt(coordinates.charAt(1)+"") % 2) != 0)
            || (flag==0 && (Integer.parseInt(coordinates.charAt(1)+"") % 2) == 0) )
             return true;
-        else 
-            return false;
+        return false;
     }
 }
