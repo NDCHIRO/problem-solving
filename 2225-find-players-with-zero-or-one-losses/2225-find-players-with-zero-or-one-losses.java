@@ -5,9 +5,10 @@ class Solution {
         {
             for(int j=0;j<2;j++)
             {
+                ArrayList <Integer> list = new ArrayList<>();
+                
                 if(map.get(matches[i][j])!=null)
                 {
-                    ArrayList <Integer> list = new ArrayList<>();
                     list = map.get(matches[i][j]);
                     list.set(j,list.get(j)+1);
                     map.put(matches[i][j],list);
@@ -15,18 +16,17 @@ class Solution {
                 
                 else
                 {
-                    ArrayList<Integer> arrList = new ArrayList<>();
                     if(j==0)
                     {
-                        arrList.add(1);
-                        arrList.add(0);
+                        list.add(1);
+                        list.add(0);
                     }
                     else
                     {
-                        arrList.add(0);
-                        arrList.add(1);
+                        list.add(0);
+                        list.add(1);
                     }
-                    map.put(matches[i][j],arrList);
+                    map.put(matches[i][j],list);
                 }
             }
                 
