@@ -34,8 +34,8 @@ class Solution {
         
         
         List<List<Integer>> res = new ArrayList<>();
-        ArrayList<Integer> inner1 = new ArrayList<>();
-        ArrayList<Integer> inner2 = new ArrayList<>();
+        ArrayList<Integer> winnerPlayers = new ArrayList<>();
+        ArrayList<Integer> oneLossPlayers = new ArrayList<>();
         
         for(Map.Entry<Integer, ArrayList<Integer>> entry : map.entrySet()) {
             int key = entry.getKey();
@@ -43,18 +43,18 @@ class Solution {
             
             
             if(values.get(0)>0 && values.get(1)==0)
-                inner1.add(key);
+                winnerPlayers.add(key);
 
             else if(values.get(0)>=0 && values.get(1)==1)
-                inner2.add(key);
+                oneLossPlayers.add(key);
             
         }
         
-        Collections.sort(inner1);
-        Collections.sort(inner2);
+        Collections.sort(winnerPlayers);
+        Collections.sort(oneLossPlayers);
         
-        res.add(inner1);
-        res.add(inner2);
+        res.add(winnerPlayers);
+        res.add(oneLossPlayers);
         
         return res;
         
