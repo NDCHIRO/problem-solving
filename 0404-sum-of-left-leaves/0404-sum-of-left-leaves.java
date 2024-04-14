@@ -22,7 +22,7 @@ class Solution {
     public int isRight(TreeNode root,Boolean rightChild)
     {
         if(root == null)
-            return 0;
+            return sum;
         if(root.left ==null && root.right==null)
             if(rightChild)
                 return sum+0;
