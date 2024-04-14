@@ -25,7 +25,7 @@ class Solution {
             return sum;
         if(root.left ==null && root.right==null)
             if(rightChild)
-                return sum+0;
+                return sum;
             else return sum+root.val;
         return isRight(root.right,true) + isRight(root.left,false);
     }
