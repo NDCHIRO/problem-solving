@@ -1,29 +1,31 @@
-public class Solution {
-public int compareVersion(String version1, String version2) {
-    int temp1 = 0,temp2 = 0;
-    int len1 = version1.length(),len2 = version2.length();
-    int i = 0,j = 0;
-    while(i<len1 || j<len2) {
-        temp1 = 0;
-        temp2 = 0;
-        while(i<len1 && version1.charAt(i) != '.') {
-            temp1 = temp1*10 + version1.charAt(i++)-'0';
+class Solution {
+    public int compareVersion(String version1, String version2) {
+        String[] arrV1 = version1.split("\\.");
+        String[] arrV2 = version2.split("\\.");
+        int res=-2;
+        int maxLength = (arrV1.length>arrV2.length)? arrV1.length:arrV2.length;
+        for(int i=0 ; i<maxLength;i++)
+        {
+            int numberV1 = i<arrV1.length? Integer.parseInt(arrV1[i]):0;
+            int numberV2 = i<arrV2.length? Integer.parseInt(arrV2[i]):0;
             
+            if(numberV1 > numberV2)
+            return 1;
+            else if(numberV2 > numberV1)
+            return -1;
         }
-        while(j<len2 && version2.charAt(j) != '.') {
-            temp2 = temp2*10 + version2.charAt(j++)-'0';
-            
-        }
-        if(temp1>temp2) return 1;
-        else if(temp1<temp2) return -1;
-        else {
-            i++;
-            j++;
-            
-        }
-        
+        return 0;
     }
-    return 0;
     
-}
+    int splitWithDot(String v1, String v2)
+    {
+        int numberV1 = Integer.parseInt(v1);
+        int numberV2 = Integer.parseInt(v2);
+        if(numberV1 > numberV2)
+            return 1;
+        else if(numberV2 > numberV1)
+            return -1;
+        else
+            return 0;
+    }
 }
