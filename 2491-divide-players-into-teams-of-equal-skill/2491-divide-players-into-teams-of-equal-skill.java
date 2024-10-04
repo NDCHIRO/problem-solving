@@ -9,12 +9,10 @@ class Solution {
         
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<skill.length;i++)
-        {
             if (map.containsKey(skill[i])) 
                 map.put(skill[i], map.get(skill[i]) + 1);
             else
                 map.put(skill[i], 1);
-         }
         
         
         int target = (2*total) / skill.length;
@@ -23,6 +21,7 @@ class Solution {
         for(int i=0;i<skill.length;i++) {
             if(map.get(skill[i]) == 0 ) continue;
             int diff = target - skill[i];
+            
             if( map.containsKey(diff) == false || map.get(diff)<=0 )
                 return -1;
             
