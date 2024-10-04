@@ -4,7 +4,7 @@ class Solution {
         for(int i=0;i<skill.length;i++)
             total+=skill[i];
         
-        if((2*total)%skill.length != 0)
+        if (total % (skill.length / 2) != 0)
             return -1;
         
         HashMap<Integer, Integer> map = new HashMap<>();
