@@ -1,47 +1,20 @@
 class Solution {
     public String compressedString(String word) {
-        if(word.length() == 1)
-            return "1"+word.charAt(0);
         StringBuilder comp = new StringBuilder();
-        int count = 1;
-        for(int i=0;i<word.length();i++)
-        {
-            if(i == word.length()-1)
-            {
-                if(count==9 && word.charAt(i) == word.charAt(i-1))
-                {
-                    comp.append(count+""+word.charAt(i));
-                    count=1;
-                }
-                else if(word.charAt(i) == word.charAt(i-1))
-                {
-                    //count++;
-                    comp.append(count+""+word.charAt(i));
-                }
+        int count = 1; // Start with a count of 1 for the first character
 
-                else if(word.charAt(i) != word.charAt(i-1))
-                {
-                    comp.append(count+""+word.charAt(i));
-                    count = 1;
-                }
-                break;
-            }  
-            if(count==9 && word.charAt(i) == word.charAt(i+1))
-            {
-                comp.append(count+""+word.charAt(i));
-                count=1;
-            }
-            else if(word.charAt(i) == word.charAt(i+1))
-            {
+        for (int i = 1; i <= word.length(); i++) {
+            // Check if we're at the end of the string or the current character is different from the previous one
+            if (i == word.length() || word.charAt(i) != word.charAt(i - 1) || count == 9) {
+                // Append the count and character
+                comp.append(count).append(word.charAt(i - 1));
+                count = 1; // Reset count for the new sequence
+            } else {
+                // Increment count if the character is the same as the previous one
                 count++;
             }
-            
-            else if(word.charAt(i) != word.charAt(i+1))
-            {
-                comp.append(count+""+word.charAt(i));
-                count = 1;
-            }
         }
+
         return comp.toString();
     }
 }
