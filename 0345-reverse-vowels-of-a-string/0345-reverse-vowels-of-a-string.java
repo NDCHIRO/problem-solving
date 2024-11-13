@@ -1,32 +1,32 @@
 class Solution {
     public String reverseVowels(String s) {
         String vowels = "AaEeIiOoUu";
-        ArrayList<Character> list = new ArrayList<>();
-        String res = "";
-        for(int i=0;i<s.length();i++)
+        int i=0,j=s.length()-1;
+        while(i<j)
         {
-            char cur = s.charAt(i);
-            if(vowels.contains(cur+""))
-            {
-                list.add(cur);
-            }
-        }
-        
-        int vowel = 0;
-        for(int i=0;i<s.length();i++)
-        {
-            char cur = s.charAt(i);
-            if(vowels.contains(cur+""))
-            {
-                res+=list.get(list.size()-vowel-1);
-                vowel++;
-            }
+            if(vowels.contains(s.charAt(i)+""))
+                if(vowels.contains(s.charAt(j)+""))
+                {
+                    s=swap(s,i,j);
+                    i++;
+                    j--;
+                }
+                else
+                    j--;
             else
-                res+=cur;
+                i++;
         }
-        return res;
-            
-        
-            
-            }
+        return s;
+    }
+    
+    
+    private String swap(String s,int i, int j)
+    {
+        StringBuilder res = new StringBuilder(s);
+        char temp = s.charAt(i);
+        res.setCharAt(i,s.charAt(j));
+        res.setCharAt(j,temp);
+        return res.toString();
+    }
+    
 }
