@@ -14,17 +14,12 @@
  * }
  */
 class Solution {
-    int noOfNodes =0;
+    int count = 1;
     public int maxDepth(TreeNode root) {
-        return DFS(root);
-    }
-    
-    public int DFS(TreeNode root)
-    {
         if(root == null)
             return 0;
-        int l = DFS(root.left);
-        int r = DFS(root.right);
-        return 1+ Math.max(l,r);
+        count = 1+ Math.max(maxDepth(root.right),
+        maxDepth(root.left));
+        return count;
     }
 }
