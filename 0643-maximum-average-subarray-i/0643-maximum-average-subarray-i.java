@@ -1,21 +1,18 @@
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        double sum = Integer.MIN_VALUE;
         double localSum = 0;
-        for(int i=0;i<nums.length;i++)
-        {
-            if(i<k)
-            {
-                localSum+=nums[i];
-                sum=localSum;
-            }
-            else
-            {
-                localSum+=nums[i]-nums[i-k];
-                System.out.println(localSum);
-                sum=Math.max(sum,localSum);
-            }
+        for (int i = 0; i < k; i++) {
+            localSum += nums[i]; // Sum of the first 'k' elements
         }
-        return sum/k;
+        
+        double maxSum = localSum; // Initialize maxSum with the first window
+
+        
+        for(int i=k;i<nums.length;i++)
+        {  
+            localSum+=nums[i]-nums[i-k];
+            maxSum=Math.max(maxSum,localSum);
+        }
+        return maxSum/k;
     }
 }
