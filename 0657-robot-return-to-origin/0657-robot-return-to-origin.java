@@ -5,12 +5,10 @@ class Solution {
         for(char c : moves.toCharArray())
         {
             if(c=='L') x++;
-            if(c=='R') x--;
-            if(c=='U') y++;
-            if(c=='D') y--;
+            else if(c=='R') x--;
+            else if(c=='U') y++;
+            else if(c=='D') y--;
         }
-        if(x == 0 && y==0)
-            return true;
-        return false;
+        return (x == 0 && y==0)? true : false;
     }
 }
