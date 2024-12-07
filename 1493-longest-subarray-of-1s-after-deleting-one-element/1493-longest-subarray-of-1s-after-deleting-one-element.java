@@ -3,9 +3,9 @@ class Solution {
         int l = 0;
         int zeroCount = 0;
         int maxRes = 0;
-        for(int i=0;i<nums.length;i++)
+        for(int r=0;r<nums.length;r++)
         {
-            if(nums[i]==0)
+            if(nums[r]==0)
                 zeroCount++;
            
             while(zeroCount > 1)
@@ -15,7 +15,7 @@ class Solution {
                 l++;
             }
             
-            maxRes = Math.max(maxRes , (i-l));
+            maxRes = Math.max(maxRes , (r-l));
         }
         return maxRes;
     }
