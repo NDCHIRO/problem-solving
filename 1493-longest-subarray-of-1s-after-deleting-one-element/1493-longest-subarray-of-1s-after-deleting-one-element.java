@@ -7,7 +7,7 @@ class Solution {
         {
             if(nums[i]==0)
                 zeroCount++;
-            
+           
             while(zeroCount > 1)
             {
                 if(nums[l] == 0)
