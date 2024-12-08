@@ -19,13 +19,12 @@ class Solution {
         }
         
         int localMax = 0;
-        for(int i=0;i<list.size();i++)
-        {
+        for(int i=0;i<list.size();i++) {
             localMax = 0;
             localMax = list.get(i)+list.get(list.size()-i-1);
             max = Math.max(localMax, max);
         }
-        return max;
         
+        return max; 
     }
 }
