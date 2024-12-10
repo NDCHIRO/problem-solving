@@ -23,13 +23,11 @@ class Solution {
     }
     
     private int countPaths(TreeNode node,int maxSoFar) {
-        if (node == null) {
+        if (node == null) 
             return 0;
-        }
+        
 
         int count = 0;
-
-        // If the current node's value matches the remaining target sum, we found a path
         if (node.val >= maxSoFar) {
             count++;
         }
