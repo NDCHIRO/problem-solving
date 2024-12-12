@@ -19,7 +19,7 @@ class Solution {
         if (noOfFresh == 0) 
             return 0;
         
-        
+        int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         
         while(! queue.isEmpty())
         {
@@ -28,40 +28,23 @@ class Solution {
             for(int i=0;i<level;i++)
             {
                 Pair<Integer,Integer> current = queue.poll();
-                //logic
-                if((current.getKey()+1) < grid.length && grid[current.getKey()+1][current.getValue()] == 1)
-                {
-                    noOfFresh--;
-                    grid[current.getKey()+1][current.getValue()]=2;
-                    freshTurnedRotten = true;
-                    queue.add(new Pair<>(current.getKey()+1, current.getValue()));
-                }
+                int x = current.getKey();
+                int y = current.getValue();
                 
-                if(current.getKey()-1 >= 0 && grid[current.getKey()-1][current.getValue()] == 1)
-                {
-                    noOfFresh--;
-                    grid[current.getKey()-1][current.getValue()]=2;
-                    freshTurnedRotten = true;
-                    queue.add(new Pair<>(current.getKey()-1, current.getValue()));
+                for(int []dir : directions) {
+                    int newX = x + dir[0];
+                    int newY = y + dir[1];
+                    
+                    //logic
+                    if (newX >= 0 && newX < grid.length && newY >= 0 && newY < grid[0].length && grid[newX][newY] == 1) {
+                        noOfFresh--;
+                        grid[newX][newY]=2;
+                        freshTurnedRotten = true;
+                        queue.add(new Pair<>(newX, newY));
+                    }
                 }
-                
-                if(current.getValue()+1 < grid[0].length && grid[current.getKey()][current.getValue()+1] == 1)
-                {
-                    noOfFresh--;
-                    grid[current.getKey()][current.getValue()+1]=2;
-                    freshTurnedRotten = true;
-                    queue.add(new Pair<>(current.getKey(), current.getValue()+1));
-                }
-                
-                if(current.getValue()-1 >= 0 && grid[current.getKey()][current.getValue()-1] == 1)
-                {
-                    noOfFresh--;
-                    grid[current.getKey()][current.getValue()-1]=2;
-                    freshTurnedRotten = true;
-                    queue.add(new Pair<>(current.getKey(), current.getValue()-1));
-                }
-                
             }
+            
             if(freshTurnedRotten)
                 minMinutes++;
             
@@ -71,3 +54,56 @@ class Solution {
     }
     
 }
+
+
+
+/*
+//very bad implementation :"D
+
+while(! queue.isEmpty())
+{
+    boolean freshTurnedRotten = false;
+    int level = queue.size();
+    for(int i=0;i<level;i++)
+    {
+        Pair<Integer,Integer> current = queue.poll();
+        //logic
+        if((current.getKey()+1) < grid.length && grid[current.getKey()+1][current.getValue()] == 1)
+        {
+            noOfFresh--;
+            grid[current.getKey()+1][current.getValue()]=2;
+            freshTurnedRotten = true;
+            queue.add(new Pair<>(current.getKey()+1, current.getValue()));
+        }
+
+        if(current.getKey()-1 >= 0 && grid[current.getKey()-1][current.getValue()] == 1)
+        {
+            noOfFresh--;
+            grid[current.getKey()-1][current.getValue()]=2;
+            freshTurnedRotten = true;
+            queue.add(new Pair<>(current.getKey()-1, current.getValue()));
+        }
+
+        if(current.getValue()+1 < grid[0].length && grid[current.getKey()][current.getValue()+1] == 1)
+        {
+            noOfFresh--;
+            grid[current.getKey()][current.getValue()+1]=2;
+            freshTurnedRotten = true;
+            queue.add(new Pair<>(current.getKey(), current.getValue()+1));
+        }
+
+        if(current.getValue()-1 >= 0 && grid[current.getKey()][current.getValue()-1] == 1)
+        {
+            noOfFresh--;
+            grid[current.getKey()][current.getValue()-1]=2;
+            freshTurnedRotten = true;
+            queue.add(new Pair<>(current.getKey(), current.getValue()-1));
+        }
+
+    }
+    if(freshTurnedRotten)
+        minMinutes++;
+
+}
+
+*/
