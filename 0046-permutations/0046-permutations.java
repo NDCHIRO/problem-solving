@@ -6,18 +6,24 @@ class Solution {
         return res;
     }
 
-    private static void backtrackDistinct(int[] nums, boolean[] used, List<Integer> path, List<List<Integer>> res) {
-        if (path.size() == nums.length) {
-            res.add(new ArrayList<>(path));
+    private void backtrackDistinct(int[] nums, boolean[] used, List<Integer> path, List<List<Integer>> res)
+    {
+        if(path.size() == nums.length)
+        {
+            res.add(new ArrayList(path));
             return;
         }
-        for (int i = 0; i < nums.length; i++) {
-            if (used[i]) continue;
+
+        for(int i=0;i<nums.length;i++)
+        {
+            if(used[i] == true) continue;
             used[i] = true;
             path.add(nums[i]);
             backtrackDistinct(nums, used, path, res);
-            path.remove(path.size() - 1);
+
+            path.remove(path.size()-1);
             used[i] = false;
         }
+
     }
 }
